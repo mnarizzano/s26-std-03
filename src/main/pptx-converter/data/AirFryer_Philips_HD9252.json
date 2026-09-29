@@ -1,0 +1,1126 @@
+{
+  "schema_version": "1.0",
+  "product": {
+    "node_id": 1,
+    "name": "Philips Airfryer HD9252",
+    "weight": 4500.0,
+    "weight_unit": "g",
+    "material": "6",
+    "color": "4",
+    "image": {
+      "path": "images/AF_product_machine_root.jpg",
+      "is_url": false
+    },
+    "kept_whole": false,
+    "contained_leaf_count": null
+  },
+  "depth": {
+    "mode": "full",
+    "keep_whole_ids": []
+  },
+  "steps": [
+    {
+      "index": 1,
+      "operation": "Remove the basket assembly",
+      "actions": [
+        {
+          "node_id": 10000,
+          "text": "Pull the basket assembly straight out of the air fryer body.",
+          "tools": null,
+          "image": {
+            "path": "images/AF_action_remove_basket.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 4,
+          "name": "Basket Assembly",
+          "weight": 400.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "4",
+          "image": {
+            "path": "images/AF_output_basket.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 36,
+        "name": "Body HD9252",
+        "weight": 3000.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": []
+    },
+    {
+      "index": 2,
+      "operation": "Remove the lower plastic cover",
+      "actions": [
+        {
+          "node_id": 237,
+          "text": "Insert a nylon spudger underneath the lower plastic cover.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_action_pry_cover.jpg",
+            "is_url": false
+          }
+        },
+        {
+          "node_id": 239,
+          "text": "Lever the tool gently and release each of the eight retaining tabs.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_action_release_tabs.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 40,
+          "name": "Plastic cover (8 hooks)",
+          "weight": 120.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_component_body_without_cover.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 241,
+        "name": "Body without cover",
+        "weight": 2880.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Nylon spudger"
+      ]
+    },
+    {
+      "index": 3,
+      "operation": "Remove the four lower housing screws",
+      "actions": [
+        {
+          "node_id": 10001,
+          "text": "Unscrew the four 12.4 mm angular screws using a JIS #1 screwdriver.",
+          "tools": [
+            "JIS #1 screwdriver"
+          ],
+          "image": {
+            "path": "images/AF_shared_unscrew_base.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 44,
+          "name": "Angular Housing Screws (x4, 12.4 mm)",
+          "weight": 8.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_shared_unscrew_base.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 246,
+        "name": "Body without cover",
+        "weight": 2872.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "JIS #1 screwdriver"
+      ]
+    },
+    {
+      "index": 4,
+      "operation": "Separate the top housing",
+      "actions": [
+        {
+          "node_id": 10002,
+          "text": "Lift the top housing away from the lower body after all fasteners are released.",
+          "tools": null,
+          "image": {
+            "path": "images/AF_action_remove_cover.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [],
+      "continues_as": {
+        "node_id": 147,
+        "name": "Inferior body",
+        "weight": 2622.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": []
+    },
+    {
+      "index": 5,
+      "operation": "Remove the transformer mounting screws",
+      "actions": [
+        {
+          "node_id": 10003,
+          "text": "Unscrew the two 39.5 mm transformer mounting screws.",
+          "tools": [
+            "JIS #1 screwdriver"
+          ],
+          "image": {
+            "path": "images/AF_action_unscrew_tray.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 58,
+          "name": "Transformer Mounting Screws (x2, 39.5 mm)",
+          "weight": 10.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_output_transformer.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 152,
+        "name": "Inferior body unscrewed",
+        "weight": 2612.0,
+        "weight_unit": "g",
+        "material": "2",
+        "color": "8",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "JIS #1 screwdriver"
+      ]
+    },
+    {
+      "index": 6,
+      "operation": "Remove the transformer top bracket",
+      "actions": [
+        {
+          "node_id": 10004,
+          "text": "Lift the transformer top bracket away from the lower body.",
+          "tools": null,
+          "image": {
+            "path": "images/AF_output_transformer_top_piece.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 62,
+          "name": "Transformer top piece",
+          "weight": 40.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_output_transformer_top_piece.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 263,
+        "name": "Inferior body without top piece",
+        "weight": 2612.0,
+        "weight_unit": "g",
+        "material": "2",
+        "color": "8",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": []
+    },
+    {
+      "index": 7,
+      "operation": "Disconnect the transformer wiring",
+      "actions": [
+        {
+          "node_id": 267,
+          "text": "Remove the brown and white wires attached to the transformer.",
+          "tools": [
+            "Needle-nose pliers"
+          ],
+          "image": {
+            "path": "images/AF_output_action_disconnect_wiring.jpg",
+            "is_url": false
+          }
+        },
+        {
+          "node_id": 269,
+          "text": "Disconnect the wire terminals from the transformer.",
+          "tools": [
+            "Needle-nose pliers"
+          ],
+          "image": {
+            "path": "images/AF_output_action_disconnect_wiring.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 66,
+          "name": "Transformer Wiring (Brown and White)",
+          "weight": 20.0,
+          "weight_unit": "g",
+          "material": "6",
+          "color": "10",
+          "image": {
+            "path": "images/AF_output_action_disconnect_wiring.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 272,
+        "name": "Inferior body without cables",
+        "weight": 2592.0,
+        "weight_unit": "g",
+        "material": "2",
+        "color": "8",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Needle-nose pliers"
+      ]
+    },
+    {
+      "index": 8,
+      "operation": "Extract the transformer",
+      "actions": [
+        {
+          "node_id": 10005,
+          "text": "Lift the transformer out of the lower housing.",
+          "tools": null,
+          "image": {
+            "path": "images/AF_output_transformer.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 70,
+          "name": "Transformer",
+          "weight": 600.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_output_transformer.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        },
+        {
+          "node_id": 277,
+          "name": "Inferior body without transformer",
+          "weight": 1992.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_output_transformer.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": null,
+      "tools_required": []
+    },
+    {
+      "index": 9,
+      "operation": "Remove the control-panel cover",
+      "actions": [
+        {
+          "node_id": 252,
+          "text": "Insert a nylon spudger underneath the control-panel cover.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_action_pry_top.jpg",
+            "is_url": false
+          }
+        },
+        {
+          "node_id": 254,
+          "text": "Lever the tool gently and pop the panel free.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_action_remove_panel.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 52,
+          "name": "Control-Panel Cover",
+          "weight": 30.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_output_rear_panel.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 256,
+        "name": "Top without panel",
+        "weight": 220.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_body_without_cover.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Nylon spudger"
+      ]
+    },
+    {
+      "index": 10,
+      "operation": "Remove the touch-control motherboard",
+      "actions": [
+        {
+          "node_id": 10006,
+          "text": "Release the motherboard from its mounting points and lift it out.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_output_motherboard_touchscreen.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 261,
+          "name": "Top without motherboard",
+          "weight": 170.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_output_motherboard_touchscreen.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        },
+        {
+          "node_id": 56,
+          "name": "Touch-Control Motherboard",
+          "weight": 50.0,
+          "weight_unit": "g",
+          "material": "8",
+          "color": "2",
+          "image": {
+            "path": "images/AF_output_motherboard_touchscreen.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": null,
+      "tools_required": [
+        "Nylon spudger"
+      ]
+    },
+    {
+      "index": 11,
+      "operation": "Separate the basket from the tray",
+      "actions": [
+        {
+          "node_id": 10007,
+          "text": "Pull the basket away from the tray-and-handle assembly.",
+          "tools": null,
+          "image": {
+            "path": "images/AF_action_remove_basket.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [],
+      "continues_as": {
+        "node_id": 200,
+        "name": "Tray with handle",
+        "weight": 250.0,
+        "weight_unit": "g",
+        "material": "2",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_tray_handle.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": []
+    },
+    {
+      "index": 12,
+      "operation": "Separate the tray and handle",
+      "actions": [
+        {
+          "node_id": 10008,
+          "text": "Unscrew the tray-handle fasteners and separate the tray from the handle.",
+          "tools": [
+            "Phillips screwdriver"
+          ],
+          "image": {
+            "path": "images/AF_action_unscrew_tray.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 10,
+          "name": "Top Handle Screws (x2, 14.8 mm)",
+          "weight": 4.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_component_body_without_cover.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        },
+        {
+          "node_id": 207,
+          "name": "Tray",
+          "weight": 100.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "4",
+          "image": {
+            "path": "images/AF_component_tray_handle.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 6,
+        "name": "Handle",
+        "weight": 150.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_tray_handle.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Phillips screwdriver"
+      ]
+    },
+    {
+      "index": 13,
+      "operation": "Remove the handle screws",
+      "actions": [
+        {
+          "node_id": 10009,
+          "text": "Unscrew the four 14.8 mm frontal screws from the handle.",
+          "tools": [
+            "Phillips screwdriver"
+          ],
+          "image": {
+            "path": "images/AF_action_unscrew_tray.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 11,
+          "name": "Front Handle Screws (x4, 14.8 mm)",
+          "weight": 8.0,
+          "weight_unit": "g",
+          "material": "2",
+          "color": "8",
+          "image": {
+            "path": "images/AF_shared_unscrew_base.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 215,
+        "name": "Handle without screws",
+        "weight": 142.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_shared_unscrew_base.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Phillips screwdriver"
+      ]
+    },
+    {
+      "index": 14,
+      "operation": "Remove the handle rear panel",
+      "actions": [
+        {
+          "node_id": 10010,
+          "text": "Insert a nylon spudger under the rear panel and carefully pry it free.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_action_pry_cover.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 16,
+          "name": "Rear panel",
+          "weight": 25.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_output_rear_panel.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 217,
+        "name": "Handle without panel",
+        "weight": 127.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_component_tray_handle.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Nylon spudger"
+      ]
+    },
+    {
+      "index": 15,
+      "operation": "Remove the handle spring",
+      "actions": [
+        {
+          "node_id": 233,
+          "text": "Push the spring down to release its tension.",
+          "tools": [
+            "Needle-nose pliers"
+          ],
+          "image": {
+            "path": "images/AF_action_remove_spring.jpg",
+            "is_url": false
+          }
+        },
+        {
+          "node_id": 235,
+          "text": "Slide the spring out of the handle assembly.",
+          "tools": [
+            "Needle-nose pliers"
+          ],
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 19,
+          "name": "Spring",
+          "weight": 10.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "8",
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": {
+        "node_id": 225,
+        "name": "Handle without spring",
+        "weight": 117.0,
+        "weight_unit": "g",
+        "material": "1",
+        "color": "4",
+        "image": {
+          "path": "images/AF_shared_spring_latch.jpg",
+          "is_url": false
+        },
+        "kept_whole": false,
+        "contained_leaf_count": null
+      },
+      "tools_required": [
+        "Needle-nose pliers"
+      ]
+    },
+    {
+      "index": 16,
+      "operation": "Separate the latch components",
+      "actions": [
+        {
+          "node_id": 10011,
+          "text": "Remove the latch front, latch button and remaining handle shell.",
+          "tools": [
+            "Nylon spudger"
+          ],
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "node_id": 22,
+          "name": "Latch Front",
+          "weight": 10.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        },
+        {
+          "node_id": 24,
+          "name": "Latch Button",
+          "weight": 10.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "8",
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        },
+        {
+          "node_id": 228,
+          "name": "Handle without latch and button",
+          "weight": 97.0,
+          "weight_unit": "g",
+          "material": "1",
+          "color": "4",
+          "image": {
+            "path": "images/AF_shared_spring_latch.jpg",
+            "is_url": false
+          },
+          "kept_whole": false,
+          "contained_leaf_count": null
+        }
+      ],
+      "continues_as": null,
+      "tools_required": [
+        "Nylon spudger"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "rule": "mass_balance",
+      "severity": "warning",
+      "message": "Mass imbalance: listed final components total 3304 g, while the product weight is 4500 g. Some internal parts are not represented in the source model.",
+      "node_ids": [
+        1
+      ]
+    }
+  ],
+  "bill_of_materials": [
+    {
+      "node_id": 4,
+      "name": "Basket Assembly",
+      "weight": 400.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "4",
+      "image": {
+        "path": "images/AF_output_basket.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 40,
+      "name": "Plastic cover (8 hooks)",
+      "weight": 120.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_component_body_without_cover.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 44,
+      "name": "Angular Housing Screws (x4, 12.4 mm)",
+      "weight": 8.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_shared_unscrew_base.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 58,
+      "name": "Transformer Mounting Screws (x2, 39.5 mm)",
+      "weight": 10.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_output_transformer.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 62,
+      "name": "Transformer top piece",
+      "weight": 40.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_output_transformer_top_piece.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 66,
+      "name": "Transformer Wiring (Brown and White)",
+      "weight": 20.0,
+      "weight_unit": "g",
+      "material": "6",
+      "color": "10",
+      "image": {
+        "path": "images/AF_output_action_disconnect_wiring.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 70,
+      "name": "Transformer",
+      "weight": 600.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_output_transformer.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 277,
+      "name": "Inferior body without transformer",
+      "weight": 1992.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_output_transformer.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 52,
+      "name": "Control-Panel Cover",
+      "weight": 30.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_output_rear_panel.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 261,
+      "name": "Top without motherboard",
+      "weight": 170.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_output_motherboard_touchscreen.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 56,
+      "name": "Touch-Control Motherboard",
+      "weight": 50.0,
+      "weight_unit": "g",
+      "material": "8",
+      "color": "2",
+      "image": {
+        "path": "images/AF_output_motherboard_touchscreen.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 10,
+      "name": "Top Handle Screws (x2, 14.8 mm)",
+      "weight": 4.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_component_body_without_cover.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 207,
+      "name": "Tray",
+      "weight": 100.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "4",
+      "image": {
+        "path": "images/AF_component_tray_handle.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 11,
+      "name": "Front Handle Screws (x4, 14.8 mm)",
+      "weight": 8.0,
+      "weight_unit": "g",
+      "material": "2",
+      "color": "8",
+      "image": {
+        "path": "images/AF_shared_unscrew_base.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 16,
+      "name": "Rear panel",
+      "weight": 25.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_output_rear_panel.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 19,
+      "name": "Spring",
+      "weight": 10.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "8",
+      "image": {
+        "path": "images/AF_shared_spring_latch.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 22,
+      "name": "Latch Front",
+      "weight": 10.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_shared_spring_latch.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 24,
+      "name": "Latch Button",
+      "weight": 10.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "8",
+      "image": {
+        "path": "images/AF_shared_spring_latch.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    },
+    {
+      "node_id": 228,
+      "name": "Handle without latch and button",
+      "weight": 97.0,
+      "weight_unit": "g",
+      "material": "1",
+      "color": "4",
+      "image": {
+        "path": "images/AF_shared_spring_latch.jpg",
+        "is_url": false
+      },
+      "kept_whole": false,
+      "contained_leaf_count": null
+    }
+  ]
+}

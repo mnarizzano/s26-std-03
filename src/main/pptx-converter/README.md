@@ -29,7 +29,27 @@ Editable PowerPoint presentation
 The converter deliberately does not reconstruct the Builder graph. Graph
 validation and linearization remain responsibilities of the shared Loader.
 
+## Correct repository location
 
+```text
+src/main/pptx-converter/
+```
+
+The public entry point is:
+
+```text
+src/main/pptx-converter/pptx_exporter.py
+```
+
+The obsolete files/directories from the older implementation should be
+removed after migration:
+
+```text
+src/main/pptx_exporter.py
+src/main/futurdata_pptx/
+src/main/requirements-pptx.txt
+src/tests/test_pptx_exporter.py
+```
 
 ## Main features
 
@@ -333,3 +353,62 @@ Close the generated `.pptx` in PowerPoint and run the export again.
 
 Use a one-line command or PowerShell backticks as shown above. A backslash is
 only a line-continuation character in Bash-like shells.
+
+## Output and resource paths
+
+The PPTX converter keeps each type of resource in one place:
+
+```text
+src/main/pptx-converter/
+├── data/       # JSON input/example files
+├── images/     # local image assets referenced by JSON
+└── output/     # generated .pptx files only
+```
+
+Generated PowerPoint files must be written to `output/`. The converter does not require or duplicate PPTX/JSON reference files under `docs/ref/pptx-converter/`.
+
+## Bundled image assets and Nespresso regression example
+
+The converter now ships with the image assets used by the reference models:
+
+```text
+src/main/pptx-converter/
+├── data/
+│   ├── Nespresso.json
+│   └── AirFryer_Philips_HD9252.json
+├── images/
+│   ├── machine_root.jpg
+│   ├── action_remove_external.jpg
+│   ├── water_pump.jpg
+│   ├── thermoblock.jpg
+│   └── ...
+└── output/
+    ├── Nespresso.pptx
+    └── AirFryer_Philips_HD9252.pptx
+```
+
+Image references in the JSON are written as relative paths such as
+`images/machine_root.jpg`. The converter resolves them independently of the
+current shell directory by checking both the JSON directory and the converter
+root. Local images are embedded directly in the generated PowerPoint, so the
+`.pptx` remains self-contained after generation.
+
+### Generate the Nespresso example with images
+
+From the repository root on Windows PowerShell:
+
+```powershell
+python "src/main/pptx-converter/pptx_exporter.py" "src/main/pptx-converter/data/Nespresso.json" "src/main/pptx-converter/output/Nespresso.pptx"
+```
+
+Do **not** add `--no-images` when testing image export. The option deliberately
+suppresses figures.
+
+### Generate the Air Fryer example with images
+
+```powershell
+python "src/main/pptx-converter/pptx_exporter.py" "src/main/pptx-converter/data/AirFryer_Philips_HD9252.json" "src/main/pptx-converter/output/AirFryer_Philips_HD9252.pptx"
+```
+
+The automated tests also verify that the Nespresso presentation contains real
+PowerPoint picture shapes, not just image placeholders.

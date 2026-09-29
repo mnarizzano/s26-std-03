@@ -203,10 +203,27 @@ class PPTXExporter(Exporter):
             left = x + (w - fitted_w) / 2
             top = y + (h - fitted_h) / 2
             if isinstance(source, io.BytesIO):
+                # ``python-pptx`` accepts a binary stream for in-memory images.
                 source.seek(0)
-            slide.shapes.add_picture(source, Inches(left), Inches(top), Inches(fitted_w), Inches(fitted_h))
+                picture_source = source
+            else:
+                # ``python-pptx`` expects a filename string or file-like object.
+                # Passing a pathlib.Path is interpreted as a stream and raises
+                # ``AttributeError: Path object has no attribute seek``.
+                # Convert local paths explicitly so images are really embedded.
+                picture_source = str(source)
+
+            slide.shapes.add_picture(
+                picture_source,
+                Inches(left),
+                Inches(top),
+                Inches(fitted_w),
+                Inches(fitted_h),
+            )
             return True
-        except Exception:
+        except (OSError, ValueError, AttributeError):
+            # Image metadata is optional. A missing/corrupt image must not stop
+            # the entire disassembly guide; callers render a placeholder.
             return False
 
     # ---------- Front matter ----------
