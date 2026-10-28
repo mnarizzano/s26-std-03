@@ -99,9 +99,41 @@ def resolve_image(
         return _download_image(reference)
 
     path = Path(reference).expanduser()
-    if not path.is_absolute() and source_dir:
-        path = Path(source_dir) / path
-    return path.resolve() if path.exists() and path.is_file() else None
+
+    # Absolute paths are used directly when they exist.
+    if path.is_absolute():
+        return path.resolve() if path.exists() and path.is_file() else None
+
+    # Builder/IR files often live in ``pptx-converter/data`` while their
+    # image references are written as ``images/foo.jpg``.  In that layout the
+    # image directory is a sibling of ``data`` rather than a child of it.
+    # Resolve a small ordered set of sensible locations instead of depending
+    # on the process working directory.  This makes the exporter behave the
+    # same when launched from VS Code, the team GUI, pytest or PowerShell.
+    candidates: list[Path] = []
+    if source_dir:
+        source_base = Path(source_dir).expanduser().resolve()
+        candidates.extend([
+            source_base / path,          # <json-dir>/images/foo.jpg
+            source_base.parent / path,   # <converter>/images/foo.jpg
+        ])
+
+    module_root = Path(__file__).resolve().parents[1]
+    candidates.extend([
+        module_root / path,              # <pptx-converter>/images/foo.jpg
+        Path.cwd() / path,               # explicit working-directory fallback
+    ])
+
+    seen: set[str] = set()
+    for candidate in candidates:
+        key = str(candidate)
+        if key in seen:
+            continue
+        seen.add(key)
+        if candidate.exists() and candidate.is_file():
+            return candidate.resolve()
+
+    return None
 
 
 def image_dimensions(source: Path | io.BytesIO) -> tuple[int, int]:

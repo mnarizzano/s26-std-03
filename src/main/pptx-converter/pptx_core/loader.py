@@ -35,11 +35,11 @@ def _candidate_loader_directories() -> list[Path]:
     converter_dir = Path(__file__).resolve().parents[1]
     main_dir = converter_dir.parent
     repository_root = main_dir.parents[1]
-    candidate_roots = [main_dir, repository_root]
-    if repository_root.parent != repository_root:
-        candidate_roots.append(repository_root.parent)
 
-    return [root / "loader_se" for root in candidate_roots]
+    return [
+        main_dir / "loader_se",
+        repository_root / "loader_se",
+    ]
 
 
 def _import_loader_module() -> ModuleType | None:

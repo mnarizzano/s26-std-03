@@ -14,8 +14,8 @@ from pptx_exporter import export_to_pptx
 
 
 CONVERTER_DIR = Path(__file__).resolve().parent
-DEFAULT_INPUT = CONVERTER_DIR / "data" / "Nespresso.json"
-DEFAULT_OUTPUT = CONVERTER_DIR / "output" / "Nespresso.pptx"
+DEFAULT_INPUT = CONVERTER_DIR / "data" / "example_air_fryer.json"
+DEFAULT_OUTPUT = CONVERTER_DIR / "output" / "example_air_fryer.pptx"
 
 
 def build_parser() -> argparse.ArgumentParser:
