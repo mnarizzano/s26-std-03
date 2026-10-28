@@ -1,69 +1,75 @@
-# PPTX Converter
+# Disassembly Wizard - Unified Desktop GUI Exporter
 
-This repository contains a PowerPoint export tool for the Futurdata disassembly guide.
-The main converter code lives in `src/main/pptx-converter`, and the tests run from `src/tests`.
+## Overview
 
-## What this project does
+A desktop application developed as part of the Futurdata Disassembly Wizard project. It integrates Rubin's `disassembly_loader` with modular exporters to convert product JSON models into comprehensive, formatted disassembly guides across multiple industry formats (PDF, Word, Markdown, HTML+JS, PowerPoint, and Text).
 
-- Loads a normalized disassembly JSON model
-- Validates the guide data
-- Exports a PowerPoint presentation (`.pptx`) with steps, bill of materials, warnings, and images
+## System Requirements
 
-## Repository structure
+- Python 3.10 or newer (Python 3.11/3.12 recommended)
+- OS: Windows 10/11, macOS, or Linux
+- Standard graphical environment supporting Tkinter
 
-- `src/main/pptx-converter/`
-  - `pptx_exporter.py` — public entry point for export functions
-  - `pptx_core/` — internal exporter engine, models, validation, and registry
-  - `data/` — sample JSON input files
-  - `output/` — default export destination for local runs
-- `src/tests/` — automated pytest regression tests
+## Installation
 
-## Requirements
+### 1. Clone or Download the Repository
 
-This project requires Python 3.11+ and the Python packages listed in:
-
-- `src/main/pptx-converter/requirements.txt`
-
-Install them with:
-
-```powershell
-cd "C:\Users\brahi\Downloads\s26-std-03-main\s26-std-03-main\src\main\pptx-converter"
-python -m pip install -r requirements.txt
+```bash
+git clone <repository-url>
+cd <repository-directory>
 ```
 
-## How to run the converter
+### 2. Create and Activate a Virtual Environment (Recommended)
 
-From the project root (`C:\Users\brahi\Downloads\s26-std-03-main\s26-std-03-main`), run:
-
-```powershell
-cd "C:\Users\brahi\Downloads\s26-std-03-main\s26-std-03-main\src\main\pptx-converter"
-python pptx_exporter.py "data/example_air_fryer.json" "output/example_air_fryer.pptx"
-```
-
-Or run the wrapper script from the same folder:
+**Windows (PowerShell):**
 
 ```powershell
-python main.py "data/example_air_fryer.json" "output/example_air_fryer.pptx"
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-### Example command
+**macOS / Linux:**
 
-```powershell
-python main.py "data/Nespresso.json" "output/Nespresso.pptx"
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-## How to run tests
+### 3. Install Dependencies
 
-From the repository root, run:
-
-```powershell
-cd "C:\Users\brahi\Downloads\s26-std-03-main\s26-std-03-main"
-python -m pytest -q
+```bash
+pip install -r requirements.txt
 ```
 
-This will execute the tests under `src/tests`.
+> **Note for Linux:** Tkinter may require system-level installation if it is not already present:
+>
+> ```bash
+> sudo apt-get install python3-tk
+> ```
 
-## Notes
+## Running the Application
 
-- The project uses a directory named `pptx-converter`, so some scripts add that folder directly to `sys.path`.
-- Keep the converter directory structure in place when running the code.
+Launch the graphical interface from the repository root:
+
+```bash
+python app.py
+```
+
+(or `python3 app.py` on macOS/Linux).
+
+## Application Features & Compliance
+
+- **Cross-Platform Path Resolution:** Dynamic module importing via `importlib.util` and `sys.path` injection guarantees execution on any host operating system, seamlessly handling directory names containing hyphens (`-`).
+- **Flexible Destinations:** Users can specify a dedicated output directory for exported files via the GUI, fulfilling thesis evaluation requirements.
+- **Configurable Parameters:** Disassembly depth (`FULL` or `KEEP_MAIN`) and Bill of Materials (BoM) generation can be toggled per export run.
+
+## Integrated Exporters
+
+| Format | Extension | Description |
+|--------|-----------|-------------|
+| PDF | `.pdf` | Formatted visual report |
+| Word | `.docx` | Structured document with BoM tables and active subroot tracking |
+| Markdown | `.md` | Lightweight documentation ready for Git hosting |
+| HTML + JS | `.html` | Interactive browser-based wizard with step navigation and component grading |
+| PowerPoint | `.pptx` | Editable presentation slides |
+| Text | `.txt` | Plain-text terminal-friendly summary |

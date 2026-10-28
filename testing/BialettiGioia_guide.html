@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bialetti Gioia - Disassembly Wizard</title>
+<style>
+:root{--bg:#0d1015;--panel:#151a22;--panel2:#1c222d;--line:#2b3441;--text:#f4f5f7;--muted:#9aabc0;--accent:#3b82f6;--success:#10b981}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.app{min-height:100vh;display:flex}.sidebar{width:300px;border-right:1px solid var(--line);padding:20px;background:#10141a;height:100vh;overflow:auto}
+.brand h1{margin:0;font-size:20px;color:var(--accent)}.step-item{width:100%;text-align:left;padding:12px;border-radius:10px;background:transparent;color:var(--text);border:1px solid transparent;margin-bottom:6px;cursor:pointer}
+.step-item.active{background:var(--panel2);border-color:var(--accent)}.content{flex:1;padding:30px 45px;max-width:1200px;margin:0 auto}
+.progress{height:8px;background:#1d2530;border-radius:99px;overflow:hidden;margin-bottom:20px}.progress div{height:100%;background:var(--accent);transition:width .3s}
+.step-layout{display:grid;grid-template-columns:1fr;gap:20px;margin-top:20px}.instructions-panel,.part-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:15px}
+.btn{border:1px solid var(--line);border-radius:10px;padding:12px 24px;font-weight:700;cursor:pointer;background:var(--accent);color:#fff}
+.btn-sec{background:#151a22;color:var(--text)}.nav-row{display:flex;gap:15px;margin-top:30px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><h1>Disassembly Guide</h1><p>Bialetti Gioia</p></div>
+    <div id="stepsList"></div>
+  </aside>
+  <main class="content">
+    <div class="progress"><div id="progressBar"></div></div>
+    <h3 id="stepCounter" style="color:var(--muted)"></h3>
+    <h1 id="stepOperation"></h1>
+    <div class="step-layout">
+      <div class="instructions-panel">
+        <h3>Instructions</h3>
+        <div id="actionsList"></div>
+        <p id="continuesAs" style="color:var(--muted);margin-top:15px;"></p>
+      </div>
+      <div>
+        <h3>Recovered Components</h3>
+        <div id="outputsList" class="parts-grid"></div>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn btn-sec" onclick="prevStep()">Back</button>
+      <button class="btn" style="margin-left:auto" onclick="nextStep()" id="nextBtn">Next</button>
+    </div>
+  </main>
+</div>
+<script>
+const ir = {"schema_version": "1.0", "product": {"name": "Bialetti Gioia", "weight": 2500.0, "weight_unit": "g"}, "depth": {"mode": "full", "keep_whole_ids": []}, "steps": [{"index": 1, "operation": "Open outer shell", "actions": [{"text": "Place the machine upside-down on a soft cloth so the bottom plate is accessible; remove any residual water from the tank seat to avoid leaks."}, {"text": "Unscrew the 4 Torx T10 screws located at the corners of the bottom plate."}, {"text": "Unscrew the 2 Phillips PH1 screws behind the rear panel, near the power-cord grommet."}, {"text": "Release the 4 internal plastic clips along the vertical edges by gently prying with a flat plastic tool."}, {"text": "Lift the upper shell vertically, keeping it parallel to the base, to separate it from the internal chassis."}], "outputs": [{"node_id": 8, "name": "Outer shell", "weight": 260.0, "weight_unit": "g", "material": "ABS (50% PCR on Responsible variant)", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["Soft cloth", "Torx T10 screwdriver", "Phillips PH1 screwdriver", "Plastic pry tool", "Hands"]}, {"index": 2, "operation": "Remove user parts", "actions": [{"text": "Lift out the 0.5 L removable water tank from its seat at the rear of the machine."}, {"text": "Pull out the used-capsule drawer from the front-bottom slot."}, {"text": "Release the 2 Phillips PH1 screws of the capsule lever / brewing-group assembly and lift it out."}], "outputs": [{"node_id": 60, "name": "Water tank", "weight": 150.0, "weight_unit": "g", "material": "SAN / transparent ABS + silicone valve", "color": null, "image": null}, {"node_id": 61, "name": "Capsule drawer", "weight": 60.0, "weight_unit": "g", "material": "ABS + stainless grid", "color": null, "image": null}, {"node_id": 62, "name": "Capsule lever", "weight": 130.0, "weight_unit": "g", "material": "Glass-filled nylon + stainless piercing plate + silicone seals", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["Hands", "Phillips PH1 screwdriver"]}, {"index": 3, "operation": "Remove control panel", "actions": [{"text": "Unplug the JST-XH 4-pin connector that links the front button board to the main PCB; press the latch before pulling."}, {"text": "Unplug the JST-PH 2-pin connector of the aluminium-capsule sensor, located just behind the capsule lever assembly."}, {"text": "Unscrew the 2 Phillips PH0 screws that hold the button panel to the front of the chassis."}, {"text": "Slide the button panel forward and lift it out together with the integrated LED indicators and the capsule sensor."}], "outputs": [{"node_id": 15, "name": "Button panel", "weight": 35.0, "weight_unit": "g", "material": "FR-4 PCB + tactile switches + LEDs + ABS cover", "color": null, "image": null}, {"node_id": 16, "name": "Capsule sensor", "weight": 18.0, "weight_unit": "g", "material": "Copper coil + ferrite core + plastic housing", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["JST connector tool", "Phillips PH0 screwdriver", "Hands"]}, {"index": 4, "operation": "Extract hydraulic circuit", "actions": [{"text": "Place a container under the chassis to catch ~30 mL of residual water that will drip from the tubing during removal."}, {"text": "Release the spring clamp on the silicone tube from the tank valve to the pump inlet; slide the tube off the barb."}, {"text": "Release the spring clamps on the silicone tubes from the pump outlet to the flow meter, and from the flow meter to the thermoblock inlet."}, {"text": "Unplug the 2-pin power connector that supplies the pump from the main PCB."}, {"text": "Unscrew the 2 Phillips PH1 screws holding the pump bracket to the chassis, then lift the pump together with the flow meter and the tubing as a single hydraulic assembly."}], "outputs": [{"node_id": 24, "name": "Vibration pump", "weight": 185.0, "weight_unit": "g", "material": "Steel body, copper winding, brass fittings, rubber dampers", "color": null, "image": null}, {"node_id": 25, "name": "Silicone tubing", "weight": 22.0, "weight_unit": "g", "material": "Food-grade silicone + zinc-plated steel spring clamps", "color": null, "image": null}, {"node_id": 26, "name": "Flow meter", "weight": 28.0, "weight_unit": "g", "material": "ABS housing + ceramic shaft + Hall sensor PCB", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["Container", "Hose clamp pliers", "Hands", "Phillips PH1 screwdriver"]}, {"index": 5, "operation": "Extract PCB & wiring", "actions": [{"text": "Unplug all remaining JST connectors from the main PCB: thermostat lead, thermoblock heater lead, pump triac lead."}, {"text": "Disconnect the mains input wires from the PCB screw terminals (LIVE / NEUTRAL / EARTH)."}, {"text": "Cut any cable ties that fix the wiring harness to the chassis ribs."}, {"text": "Unscrew the 4 Phillips PH0 screws securing the PCB to its plastic tray and lift the board out."}, {"text": "Pull the wiring harness and the power cord through the chassis cut-out as a single bundle."}], "outputs": [{"node_id": 34, "name": "Main PCB", "weight": 55.0, "weight_unit": "g", "material": "FR-4 PCB + SMD components + electrolytic capacitors + triacs", "color": null, "image": null}, {"node_id": 35, "name": "Wiring harness", "weight": 70.0, "weight_unit": "g", "material": "Copper conductors + PVC insulation + nylon JST housings", "color": null, "image": null}, {"node_id": 36, "name": "Power cord", "weight": 140.0, "weight_unit": "g", "material": "3-core copper cable + PVC jacket + thermoplastic Schuko plug", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["JST connector tool", "Phillips PH0 screwdriver", "Side cutters", "Hands"]}, {"index": 6, "operation": "Extract thermoblock", "actions": [{"text": "Verify the machine has been unplugged for at least 30 minutes so the thermoblock has fully cooled before touching the metal body."}, {"text": "Disconnect the two faston terminals of the heating element from the harness, and the 2-pin JST of the safety thermostat."}, {"text": "Unscrew the brass nut at the thermoblock outlet (towards the brew chamber) using a 10 mm wrench; keep a cloth nearby for residual drips."}, {"text": "Unscrew the 2 Phillips PH1 screws of the thermoblock bracket on the chassis side wall."}, {"text": "Lift the thermoblock assembly vertically out of its seat."}], "outputs": [{"node_id": 45, "name": "Chassis frame", "weight": 967.0, "weight_unit": "g", "material": "Galvanized steel + ABS brackets + EPDM feet", "color": null, "image": null}], "continues_as": {"name": ""}, "tools_required": ["Heat-resistant gloves (precaution)", "Hands", "10 mm wrench", "Phillips PH1 screwdriver"]}, {"index": 7, "operation": "Disassemble thermoblock", "actions": [{"text": "Clamp the aluminium body in a bench vice with soft jaws to avoid marking the surface; keep the heating-element side accessible."}, {"text": "Unscrew the safety thermostat from its threaded seat on the body; it comes out as a single threaded brass capsule."}, {"text": "Push out the heating element from its dedicated tunnel inside the aluminium body, gently tapping with a soft mallet if needed."}, {"text": "Separate the stainless-steel tube (water path) from the aluminium body; depending on the design, this may require a press or destructive cut."}], "outputs": [{"node_id": 63, "name": "Thermoblock fasteners", "weight": 20.0, "weight_unit": "g", "material": "Zinc-plated steel screws + silicone/graphite gaskets", "color": null, "image": null}, {"node_id": 51, "name": "Heating element", "weight": 45.0, "weight_unit": "g", "material": "Nichrome (NiCr 80/20) wire + ceramic carrier + stainless sheath", "color": null, "image": null}, {"node_id": 52, "name": "Safety thermostat", "weight": 15.0, "weight_unit": "g", "material": "Brass body + bimetal disc + ceramic insulator", "color": null, "image": null}, {"node_id": 53, "name": "Aluminium body", "weight": 240.0, "weight_unit": "g", "material": "Cast aluminium alloy (AlSi9Cu3 or similar)", "color": null, "image": null}, {"node_id": 54, "name": "Stainless tube", "weight": 60.0, "weight_unit": "g", "material": "Stainless steel AISI 304", "color": null, "image": null}], "continues_as": null, "tools_required": ["Bench vice with soft jaws", "Hex key (typically 4 mm)", "Soft mallet", "Press / saw (destructive option)"]}], "warnings": [], "bill_of_materials": []};
+let current = 0;
+const steps = ir.steps || [];
+function render(){
+  if(!steps.length) return;
+  const s = steps[current];
+  document.getElementById('stepCounter').textContent = 'STEP ' + (current+1) + ' OF ' + steps.length;
+  document.getElementById('stepOperation').textContent = s.operation;
+  document.getElementById('progressBar').style.width = ((current+1)/steps.length*100) + '%';
+  document.getElementById('actionsList').innerHTML = (s.actions||[]).map((a,i)=>'<p><b>' + (i+1) + '.</b> ' + a.text + '</p>').join('') || '<p>Perform action carefully.</p>';
+  document.getElementById('continuesAs').textContent = s.continues_as ? 'Remaining Assembly: ' + s.continues_as.name : 'End of disassembly branch.';
+  document.getElementById('outputsList').innerHTML = (s.outputs||[]).map(o=>'<div class="part-card"><h4>' + o.name + '</h4><p>Weight: ' + (o.weight||'—') + ' g</p></div>').join('') || '<p>No parts detached.</p>';
+  document.getElementById('stepsList').innerHTML = steps.map((st,i)=>'<button class="step-item ' + (i===current?'active':'') + '" onclick="goTo(' + i + ')">Step ' + (i+1) + ': ' + st.operation + '</button>').join('');
+  document.getElementById('nextBtn').textContent = current === steps.length-1 ? 'Finish' : 'Next';
+}
+function nextStep(){ if(current < steps.length-1){ current++; render(); } else alert('Disassembly workflow complete!'); }
+function prevStep(){ if(current > 0){ current--; render(); } }
+function goTo(i){ current = i; render(); }
+render();
+</script>
+</body>
+</html>
