@@ -486,8 +486,16 @@ class EliteExporterApp(ctk.CTk):
             # 6. Text Exporter (Ali)
             elif self.selected_format == "TXT":
                 if TXTExporter:
-                    exporter = TXTExporter()
-                    exporter.export(str(input_path), str(target_out_path))
+                    import tempfile
+                    from disassembly_loader.emitter import guide_to_dict
+                    with tempfile.TemporaryDirectory() as tmp:
+                        ir_path = os.path.join(tmp, "guide_ir.json")
+                        ir = guide_to_dict(guide)
+                        if ir["bill_of_materials"] is None:
+                            ir["bill_of_materials"] = []
+                        with open(ir_path, "w", encoding="utf-8") as fh:
+                            json.dump(ir, fh)
+                        TXTExporter().export(ir_path, str(target_out_path))
                     generated = target_out_path
                 else:
                     messagebox.showerror("Module Error", "'txt_exporter.py' (TXTExporter) not found.")
