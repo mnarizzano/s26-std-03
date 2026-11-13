@@ -204,7 +204,7 @@ class Step:
                 if item is not None
                 and (component := Component.from_any(item)) is not None
             ],
-            continues_as=Component.from_any(data.get("continues_as")),
+            continues_as=Component.from_any(next(iter(_as_list(_plain(data.get("continues_as")))), None)),
             tools_required=_labels(data.get("tools_required", data.get("tools"))),
             safety_notices=_labels(data.get("safety_notices", data.get("safety"))),
             image=_image_reference(data.get("image")),
